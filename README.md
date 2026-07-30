@@ -1,5 +1,9 @@
 # The strongest player is not the strongest test
 
+<img src="images/README-image.png" width="400" alt="Collapse3 board collapse">
+
+*Collapse3 is **not** 3D tic-tac-toe. The 3×3×3 geometry is familiar; the rules and state dynamics are not ([why?](https://github.com/Rob-McCormack/collapse-3/blob/d422b3e/docs/FAQ.md#18-is-collapse3-just-a-more-complicated-version-of-3d-tic-tac-toe)).*
+
 **An evaluation that tests only against optimal opponents can certify nothing.
 Letting the opponent make one deliberate mistake per game recovers the entire
 exposure universe — at (3,3), (4,4) and (5,5) — and restores certification at
