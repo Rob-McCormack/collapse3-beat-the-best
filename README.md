@@ -24,6 +24,13 @@ certification at the two sizes where certification is computable.
 *Sizes such as (3,3) are reserve counts — beads per player — not board
 dimensions.*
 
+Collapse3 is not offered as a miniature of the real world. It is a setting where
+an evaluation's own behaviour restricts which states it can ever inspect, and
+where the consequence of that can be computed rather than argued about. Everyone
+accepts that you cannot certify what you never look at. What is not obvious —
+and what a solved game can settle — is how much of the space the most natural
+protocol fails to look at, and how cheaply that can be fixed.
+
 This is the two-page exhibit of
 [collapse-3](https://github.com/Rob-McCormack/collapse-3), pinned at commit
 `d422b3e`. Every number below is produced by the experiments cited; nothing here
@@ -139,14 +146,18 @@ idea is Act II's 3,000 games. The cheap fix is closure, not randomness.
 
 ## Scope — what this does not claim
 
-This is a solved toy game. Nothing here predicts how any real system behaves,
-and no result below should be read as an empirical claim about language models,
-game engines, or any deployed agent.
+**What transfers, and what does not.** The mechanism is structural: an
+evaluation constrains a candidate only where it observes one, so a weakness
+confined to states the protocol avoids survives it. The numbers do not travel —
+10, 447, one blunder are properties of this game under a frozen reference
+policy, and nothing here is an empirical claim about any deployed system.
 
-What transfers is negative: a class of evaluation protocol that looks rigorous
-can be shown, exactly, to rule out less than it appears to. That is knowledge
-about methods, not a forecast about systems — and it is only interesting
-because the ground truth here is computed rather than estimated.
+Between those sits an assumption worth naming. Certification here admits *any*
+policy consistent with what was observed, giving no credit for generalization,
+whereas real evaluations lean on the belief that behaviour at unseen states
+resembles behaviour at seen ones. The constraint bites in proportion to how far
+that belief fails — which the main repo tests rather than assumes: a network
+scoring ~98% on unseen positions is still a certified forced loss (Finding 16).
 
 **The one-blunder result is bounded in three ways.** Certification is verified
 at (3,3) and (4,4); at (5,5) only the exposure half is established, because the
