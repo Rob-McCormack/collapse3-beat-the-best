@@ -25,11 +25,12 @@ certification at the two sizes where certification is computable.
 dimensions.*
 
 Collapse3 is not offered as a miniature of the real world. It is a setting where
-an evaluation's own behaviour restricts which states it can ever inspect, and
-where the consequence of that can be computed rather than argued about. Everyone
-accepts that you cannot certify what you never look at. What is not obvious —
-and what a solved game can settle — is how much of the space the most natural
-protocol fails to look at, and how cheaply that can be fixed.
+the evaluator's choice of opponent determines which candidate decisions can ever
+be inspected, and where the consequence of that choice is computable. Everyone
+accepts that you cannot certify what you never look at. What is not obvious, and
+what a solved game can settle, is where the threshold falls: whether the
+opponent everyone reaches for first sits on the wrong side of it, and what the
+cheapest crossing costs.
 
 This is the two-page exhibit of
 [collapse-3](https://github.com/Rob-McCormack/collapse-3), pinned at commit
