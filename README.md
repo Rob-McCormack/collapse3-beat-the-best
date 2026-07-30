@@ -4,12 +4,25 @@
 
 *Collapse3 is **not** 3D tic-tac-toe. The 3×3×3 geometry is familiar; the rules and state dynamics are not ([why?](https://github.com/Rob-McCormack/collapse-3/blob/d422b3e/docs/FAQ.md#18-is-collapse3-just-a-more-complicated-version-of-3d-tic-tac-toe)).*
 
-**An evaluation that tests only against optimal opponents can certify nothing.
-Letting the opponent make one deliberate mistake per game recovers the entire
-exposure universe — at (3,3), (4,4) and (5,5) — and restores certification at
-the two sizes small enough to certify.**
+Collapse3 is a small strategy game, solved exactly at low reserve counts, used
+here to test an evaluation method against exact ground truth rather than against
+intuition or a statistical estimate.
 
-*Sizes like (3,3) are reserve counts — beads per player — not board dimensions.*
+That an evaluation facing only optimal opponents can pass a candidate that is
+still a forced loss is not, by itself, news: inspect fewer decisions and you
+certify less. What is not obvious is where that threshold sits, or what it costs
+to cross it. So this exhibit asks the narrow version of the question, and
+answers it exactly:
+
+> **How far must a test opponent be allowed to depart from optimal play before
+> passing the test rules out a forced loss?**
+
+**One deliberate mistake per game.** That recovers the entire set of decisions an
+unrestricted opponent could reach — at (3,3), (4,4) and (5,5) — and restores
+certification at the two sizes where certification is computable.
+
+*Sizes such as (3,3) are reserve counts — beads per player — not board
+dimensions.*
 
 This is the two-page exhibit of
 [collapse-3](https://github.com/Rob-McCormack/collapse-3), pinned at commit
@@ -20,16 +33,20 @@ is prose-only.
 
 ## The game, in brief
 
-Collapse3 is played on nine vertical pegs, each holding at most three beads.
-You place beads from your reserve to complete a line of three, and — subject to
-five legality conditions — you may remove one of your opponent's beads, which
-drops everything above it and can complete a line for either player. `(4,4)`
-means four beads per player: the board never changes size, only the reserves
-do, and the full game is `(14,14)`.
+Collapse3 is played on a 3×3 grid of nine vertical pegs, each holding at most
+three beads — 27 cells and **49 winning lines**. You place beads from your
+reserve to complete a line of three, and — subject to five legality conditions —
+you may destroy one of your opponent's beads, which drops everything above it
+and can complete a line for either player. `(4,4)` means four beads per player:
+the board never changes size, only the reserves do, and the full game is
+`(14,14)`.
 
 At small reserves the game is **solved exactly**, so every move in every
-position has a known true value. That makes it an instrument: instead of
-grading agents, you can grade evaluation methods against ground truth.
+position has a known true value. That is what makes it an instrument: instead of
+grading agents against each other, you can grade evaluation methods against
+ground truth.
+
+→ [`RULES.md`](RULES.md) — the rules in one page.
 
 ## What "certify" means here
 
