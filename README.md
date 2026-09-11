@@ -77,8 +77,9 @@ loss out. At (4,4) this holds from *both* seats.
 More inspection certifies more; that direction is structural. The finding is
 *which* protocol falls below the threshold. Restricting the opponent to strong
 play — the natural "test against the best bots" choice — is exactly what does
-it, because a perfect opponent will not enter an objectively losing line, and
-the losing lines are where the weakness lives.
+it, because a perfect opponent will not enter an objectively losing line. The
+exam route goes straight past the doors where a weakness would live, and
+nothing behind them is ever ruled out.
 
 The missed flaw is as small as it can be: **one** non-canonical decision is
 enough to make a passing agent force-losable, and that number does not grow
