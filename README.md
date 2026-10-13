@@ -2,7 +2,9 @@
 
 <img src="images/README-image.png" width="400" alt="Collapse3 board collapse">
 
-*Collapse3 is **not** 3D tic-tac-toe. The 3×3×3 geometry is familiar; the rules and state dynamics are not ([why?](https://github.com/Rob-McCormack/collapse-3/blob/d422b3e/docs/FAQ.md#18-is-collapse3-just-a-more-complicated-version-of-3d-tic-tac-toe)).*
+*Collapse3 is **not** 3D tic-tac-toe. The 3×3×3 geometry is familiar; the rules and state dynamics are not.*
+
+*The strangeness of this game does not announce itself. The rules read like an ordinary small deterministic game, and what makes it otherwise shows up only when you trace their consequences — so [`RULES.md`](RULES.md#before-the-rules-what-is-strange-here) states them before it gives the rules.*
 
 Collapse3 is a small strategy game, solved exactly at low reserve counts, used
 here to test an evaluation method against exact ground truth rather than against
@@ -54,7 +56,9 @@ position has a known true value. That is what makes it an instrument: instead of
 grading agents against each other, you can grade evaluation methods against
 ground truth.
 
-→ [`RULES.md`](RULES.md) — the rules in one page.
+→ [`RULES.md`](RULES.md) — what is strange here, then the rules in one page. The
+longer answer to the 3D tic-tac-toe question is [in the
+FAQ](https://github.com/Rob-McCormack/collapse-3/blob/d422b3e/docs/FAQ.md#18-is-collapse3-just-a-more-complicated-version-of-3d-tic-tac-toe).
 
 ## What "certify" means here
 
